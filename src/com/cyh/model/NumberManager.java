@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class NumberManager {
 
-	private int lastNumber = 1; //上一个客户号码
+	private Integer lastNumber = 1; //上一个客户号码
 	private List<Integer> queueNumber = new ArrayList<>(); //等待服务的客户号码集合
 	
 	/**
@@ -22,7 +22,7 @@ public class NumberManager {
 	 * 生成号码
 	 * @return 返回生成的号码
 	 */
-	public int generateNumber() {
+	public synchronized Integer generateNumber() {
 		lastNumber++;
 		queueNumber.add(lastNumber);
 		return lastNumber;
@@ -32,8 +32,8 @@ public class NumberManager {
 	 * 获取马上要为之服务的号码（叫号）
 	 * @return 号码
 	 */
-	public int fetchNumber() {
-		int nowNumber = 0;
+	public synchronized Integer fetchNumber() {
+		Integer nowNumber = null;
 		if (queueNumber.size() > 0) {
 			nowNumber = queueNumber.remove(0);
 		}
