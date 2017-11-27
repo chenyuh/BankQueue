@@ -10,9 +10,18 @@ import java.util.List;
  */
 public class NumberManager {
 
-	private Integer lastNumber = 1; //上一个客户号码
+	private Integer lastNumber = 0; //上一个客户号码
 	private List<Integer> queueNumber = new ArrayList<>(); //等待服务的客户号码集合
+	private CustomerType type = CustomerType.COMMON;
 	
+	public CustomerType getType() {
+		return type;
+	}
+
+	public void setType(CustomerType type) {
+		this.type = type;
+	}
+
 	/**
 	 * 无参构造方法
 	 */

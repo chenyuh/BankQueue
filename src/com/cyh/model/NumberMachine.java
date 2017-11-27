@@ -33,6 +33,7 @@ public class NumberMachine {
 	 * @return 普通客户对象(NumberManager)
 	 */
 	public NumberManager getCommonCustomer() {
+		commonCustomer.setType(CustomerType.COMMON);
 		return commonCustomer;
 	}
 	
@@ -41,6 +42,7 @@ public class NumberMachine {
 	 * @return 快速客户对象(NumberManager)
 	 */
 	public NumberManager getFastCustomer() {
+		fastCustomer.setType(CustomerType.FAST);
 		return fastCustomer;
 	}
 	
@@ -49,6 +51,7 @@ public class NumberMachine {
 	 * @return vip客户对象(NumberManager)
 	 */
 	public NumberManager getVipCustomer() {
+		vipCustomer.setType(CustomerType.VIP);
 		return vipCustomer;
 	}
 
